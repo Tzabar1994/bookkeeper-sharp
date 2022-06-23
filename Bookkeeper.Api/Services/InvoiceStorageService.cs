@@ -9,7 +9,7 @@ namespace Bookkeeper.Api.Services
     }
     public class InvoiceStorageService : IInvoiceStorageService
     {
-        private static List<Invoice> _storage;
+        private List<Invoice> _storage;
         
         public InvoiceStorageService()
         {
