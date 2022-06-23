@@ -1,8 +1,10 @@
+using Bookkeeper.Api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add necessary services
-
+//builder.Services.AddScoped<IInvoiceStorageService, InvoiceStorageService>();
+builder.Services.AddSingleton<IInvoiceStorageService, InvoiceStorageService>();
 builder.Services.AddControllers();
 
 // Add Swagger
