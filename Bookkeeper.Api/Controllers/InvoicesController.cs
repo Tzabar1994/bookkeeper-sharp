@@ -16,20 +16,20 @@ public class InvoicesController : ControllerBase
     }
 
 
-    [HttpPost]
+    [HttpPost("/invoices")]
     public ActionResult CreateInvoice(Invoice toSave)
     {
         _storage.StoreInvoice(toSave);
         return Ok();
     }
 
-    [HttpGet]
+    [HttpGet("/invoices")]
     public List<Invoice> GetInvoices()
     {
         return _storage.GetInvoices();
     }
 
-    [HttpGet("/customer-report")]
+    [HttpGet("/invoices/customer-report")]
     public Dictionary<string, decimal> GetCustomerReport()
     {
         var invoices = _storage.GetInvoices();
